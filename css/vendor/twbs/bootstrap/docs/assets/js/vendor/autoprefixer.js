@@ -15043,7 +15043,7 @@ var _classCallCheck = function (instance, Constructor) { if (!(instance instance
 
 var Container = _interopRequire(require("./container"));
 
-// CSS at-rule like “this.keyframes name { }”.
+// CSS at-rule like ï¿½this.keyframes name { }ï¿½.
 //
 // Can contain declarations (like this.font-face or this.page) ot another rules.
 
@@ -15819,7 +15819,7 @@ var vendor = _interopRequire(require("./vendor"));
 
 var Node = _interopRequire(require("./node"));
 
-// CSS declaration like “color: black” in rules
+// CSS declaration like ï¿½color: blackï¿½ in rules
 
 var Declaration = (function (Node) {
     function Declaration(defaults) {
@@ -17791,7 +17791,7 @@ var Container = _interopRequire(require("./container"));
 
 var list = _interopRequire(require("./list"));
 
-// CSS rule like “a { }”
+// CSS rule like ï¿½a { }ï¿½
 
 var Rule = (function (Container) {
     function Rule(defaults) {
@@ -18367,7 +18367,7 @@ define(function (require, exports, module) {
  * http://opensource.org/licenses/BSD-3-Clause
  *
  * Based on the Base 64 VLQ implementation in Closure Compiler:
- * https://code.google.com/p/closure-compiler/source/browse/trunk/src/com/google/debugging/sourcemap/Base64VLQ.java
+ * https://code.google.com/p/closure-compiler/source/browse/trunk/public/com/google/debugging/sourcemap/Base64VLQ.java
  *
  * Copyright 2011 The Closure Compiler Authors. All rights reserved.
  * Redistribution and use in source and binary forms, with or without
@@ -18589,7 +18589,7 @@ define(function (require, exports, module) {
    *       file: "out.js",
    *       sourceRoot : "",
    *       sources: ["foo.js", "bar.js"],
-   *       names: ["src", "maps", "are", "fun"],
+   *       names: ["public", "maps", "are", "fun"],
    *       mappings: "AA,AB;;ABCDE;"
    *     }
    *
@@ -19105,7 +19105,7 @@ define(function (require, exports, module) {
    *        version : 3,
    *        file: "section.js",
    *        sources: ["foo.js", "bar.js"],
-   *        names: ["src", "maps", "are", "fun"],
+   *        names: ["public", "maps", "are", "fun"],
    *        mappings: "AAAA,E;;ABCDE;"
    *      }
    *    }],

@@ -1,11 +1,5 @@
 <?php
 
-/**
- * Created by PhpStorm.
- * User: appleca58015
- * Date: 12/9/15 AD
- * Time: 4:29 PM
- */
 class SQLQuery
 {
     protected $_dbHandle;

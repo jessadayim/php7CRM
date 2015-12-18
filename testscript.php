@@ -2,7 +2,7 @@
 <html>
 <head>
     <title>CRM PHP 7</title>
-    <script src="js/jquery-1.11.3.js"></script>
+    <script src="public/js/jquery-1.11.3.js"></script>
     <script type="text/javascript">
 
     </script>
@@ -20,6 +20,19 @@ $sMobilePhone = '';
 $sAccountName = '';
 $sFaxNumber = '';
 $sWebsite = 'http://';
+$sEmail = '';
+$sPrimary_address = '';
+$sPrimary_city = '';
+$sPrimary_state = '';
+$sPrimary_postal_code = '';
+$sPrimary_country = '';
+
+$sOther_address = '';
+$sOther_city = '';
+$sOther_state = '';
+$sOther_postal_code = '';
+$sOther_country = '';
+$chk_copy_primary_other = null;
 
 // check post
 if ($_POST) {
@@ -33,6 +46,19 @@ if ($_POST) {
     $sAccountName = @$_POST['account_name'];
     $sFaxNumber = @$_POST['fax_number'];
     $sWebsite = @$_POST['website'];
+    $sEmail = @$_POST['email'];
+    $sPrimary_address = @$_POST['primary_address'];
+    $sPrimary_city = @$_POST['primary_city'];
+    $sPrimary_state = @$_POST['primary_state'];
+    $sPrimary_postal_code = @$_POST['primary_postal_code'];
+    $sPrimary_country = @$_POST['primary_country'];
+
+    $sOther_address = @$_POST['other_address'];
+    $sOther_city = @$_POST['other_city'];
+    $sOther_state = @$_POST['other_state'];
+    $sOther_postal_code = @$_POST['other_postal_code'];
+    $sOther_country = @$_POST['other_country'];
+    $chk_copy_primary_other = @$_POST['chk_copy_primary_other'];
 }
 
 ?>
@@ -229,7 +255,7 @@ if ($_POST) {
                 Description:
             </td>
             <td colspan="3">
-                <textarea id="description" name="description" style="width: 100%; height: 150px;"></textarea>
+                <textarea id="description" name="description" style="width: 100%; height: 100px;"></textarea>
             </td>
         </tr>
     </table>
@@ -243,4 +269,44 @@ if ($_POST) {
 <?php
 
 // Save state >> below code will be move to controller class
+
+if($_POST) {
+    // Collect All field for save
+    echo '<br/>Test Post Field<br/><br/>';
+    var_dump($_POST);
+} else {
+
+    $mysqli = new mysqli("localhost", "root", "je023836623", "7crm");
+
+    /* check connection */
+    if (mysqli_connect_errno()) {
+        printf("Connect failed: %s\n", mysqli_connect_error());
+        exit();
+    }
+
+    /* return name of current default database */
+    if ($result = $mysqli->query("SELECT DATABASE()")) {
+        $row = $result->fetch_row();
+        printf("Default database is %s.\n", $row[0]);
+        $result->close();
+    }
+
+    /* change db to world db */
+    $mysqli->select_db("test");
+
+    /* return name of current default database */
+    if ($result = $mysqli->query("SELECT DATABASE()")) {
+        $row = $result->fetch_row();
+        printf("Default database is %s.\n", $row[0]);
+        $result->close();
+    }
+
+    $mysqli->close();
+
+//    include_once('library/SQLQuery.class.php');
+//    $sqlClass = new SQLQuery();
+//    $connectSql = $sqlClass->connect('localhost', 'root', 'je023836623', '7crm');
+//    echo '<br>'.$connectSql;
+}
+
 

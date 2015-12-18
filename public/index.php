@@ -8,10 +8,3 @@ if($_GET) {
 }
 
 require_once (ROOT . DS . 'library' . DS . 'bootstrap.php');
-
-?>
-Hi, this is Index Page.
-<br>
-<?php
-
-echo $url;

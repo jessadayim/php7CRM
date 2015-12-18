@@ -1,11 +1,5 @@
 <?php
 
-/**
- * Created by PhpStorm.
- * User: appleca58015
- * Date: 12/9/15 AD
- * Time: 4:26 PM
- */
 class Model extends SQLQuery
 {
     protected $_model;
